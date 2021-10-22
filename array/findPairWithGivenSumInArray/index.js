@@ -1,12 +1,12 @@
 function findPairWithGivenSumInArray(array, sum) {
-  const hash = {}
+  const foundValues = new Set()
 
   for (let number of array) {
     const rest = sum - number
-    if (hash[rest]) {
+    if (foundValues.has(rest)) {
       return true
     } else {
-      hash[number] = number
+      foundValues.add(number)
     }
   }
 
